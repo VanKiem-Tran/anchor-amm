@@ -1,0 +1,25 @@
+[package]
+name = "anchor-amm"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "anchor_amm"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = { git = "https://github.com/coral-xyz/anchor.git", features = ["init-if-needed"] }
+anchor-spl = { git = "https://github.com/coral-xyz/anchor.git" }
+getrandom = { version = "0.2.9", features = ["custom"] }
+solana-program = "=1.17.7"
+winnow="=0.5.26"
+toml_datetime="=0.6.5"
+constant-product-curve = { git = "https://github.com/deanmlittle/constant-product-curve.git" }
